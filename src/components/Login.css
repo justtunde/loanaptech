@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container h1 {
+    margin-bottom: 50px;
+    color: black;
+    font-weight: bolder;
+    font-size: 3rem;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 140px;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.75);
+    width: 530px;
+    height: 420px;
+    border-radius: 34px;
+    transition:  0.8s ease;
+    border: 1px solid rgba(255, 255, 255,0.4);
+    box-shadow:0 10px 25px rgba(0,0,0,0.12),0 20px 40px rgba(0,0,0,0.08),0 0 15px rgba(255, 255, 255,0.6)inset;
+    gap: 25px;
+    cursor: pointer;
+}
+
+.login-container input {
+    width: 85%;
+    height: 75px;
+    border-radius: 24px;
+    padding: 20px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    background: #f8fbff;
+    transition: 0.8s ease;
+    outline: none;
+    cursor: pointer;
+}
+
+.login-container input:hover {
+    transform: scale(1.08);
+}
+
+.login-container input:focus {
+    background: white;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.login-container input::placeholder {
+    color: gray;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.login-container button {
+    width: 85%;
+    height: 67px;
+    background: linear-gradient(135deg,#6594f8,#0d3092);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    font-size: 20px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 24px;
+    transition: 0.6s ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.login-container button:hover{
+    transform: scale(1.06);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.45);
+    background: linear-gradient(135deg,#1d4ed8,#1e40af);
+}
+
+.login-container button:active {
+    transform: scale(0.96);
+}
+
+.login-container a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bolder;
+    color: darkgray;
+}
+
+.login-container span {
+    color: #1d4ed8;
+    font-size: 21px;
+}
