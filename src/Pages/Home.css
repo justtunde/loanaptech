@@ -1,0 +1,120 @@
+.top {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    align-items: center;
+}
+
+.home-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.top h1 {
+    color: black;
+    font-weight: bolder;
+    font-size: 3.5rem;
+}
+
+.top p {
+    margin-bottom: 30px;
+    font-size: 22px;
+    color: black;
+    line-height: 1.5;
+}
+
+.apply-btn {
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    transition: 0.6s ease;
+    text-decoration: none;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    font-weight: 900;
+    color: white;
+    width: 220px;
+    border-radius: 24px;
+    align-items: center;
+    border: 1px solid blue;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.apply-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.45);
+    background: linear-gradient(135deg,#1d4ed8,#1e40af);
+}
+
+.apply-btn:active {
+    transform: scale(0.98);
+}
+
+.cardss p {
+    font-size: 20px;
+}
+
+.cardss {
+    background: rgba(255, 255, 255, 0.75);
+    width: 390px;
+    height: 264px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255,0.4);
+    box-shadow:0 10px 25px rgba(0,0,0,0.12),0 20px 40px rgba(0,0,0,0.08),0 0 15px rgba(255, 255, 255,0.6)inset;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.8s ease ;
+    cursor: pointer;
+}
+
+.cardss:hover {
+    transform: translateY(15px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(37,99,235,0.25);
+}
+
+.cardss h2 {
+    color:#2563eb ;
+    font-weight: bolder;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+    
+}
+
+.cardss h3 {
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    color: #1e293b;
+    font-size: 20px;
+}
+
+.cardss p {
+    color: #4b5563;
+    padding: 7px;
+    font-weight: bolder;
+}
+
+.status {
+    display: flex;
+   
+}
+
+.status-link{
+    color: #2563eb;
+    font-size: 22px;
+    font-weight: bolder;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.status p {
+    margin-right: 9px;
+    font-weight: 600;
+    font-size: 22px;
+}

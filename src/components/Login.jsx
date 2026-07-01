@@ -6,8 +6,8 @@ function Login() {
         <div className="login-container">
             <h1>Welcome Back</h1>
             <form action="">
-                <input type="Email" placeholder="useracc@gmail.com"/>
-                <input type="Password" placeholder="password"/>
+                <input type="Email" placeholder="useracc@gmail.com" required/>
+                <input type="Password" placeholder="password"required/>
                 <button type="submit">Login</button>
                 <a href="signup">Don't have an account? <span>Sign up</span></a>
             </form>

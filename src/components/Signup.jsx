@@ -6,9 +6,9 @@ function Signup(){
             <div className="container2">
                 <h1>Create your account</h1>
                 <form>
-                    <input type="text" placeholder="Full Name"/>
-                    <input type="Email"  placeholder="Email address"/>
-                    <input type="number" placeholder="Phone Number"/>
+                    <input type="text" placeholder="Full Name" required/>
+                    <input type="Email"  placeholder="Email address" required/>
+                    <input type="number" placeholder="Phone Number" required/>
                     <input type="password" placeholder="Password" required/>
                     <input type="password" placeholder="Confirm Password" required/>
                     <button type="submit">Sign up</button>
