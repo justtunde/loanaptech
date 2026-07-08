@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer(){
@@ -13,25 +14,25 @@ function Footer(){
 
                 <div className="footer-box">
                     <h2>Quick Links</h2>
-                    <a href="#">Home</a>
-                    <a href="#">Loan Products</a>
-                    <a href="#">Apply Now</a>
-                    <a href="#">About Us</a>
+                    <Link to={"/"} className="footer-link">Home</Link>
+                    <Link className="footer-link">Loan Products</Link>
+                    <Link to={"/apply"} className="footer-link">Apply Now</Link>
+                    <Link to={"/about"} className="footer-link">About Us</Link>
                 </div>   
 
                 <div className="footer-box">
-                <h2>Support</h2>
-                <a href="#">Contact Us</a>
-                <a href="#">FAQ</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                    <h2>Support</h2>
+                    <Link to={"/contact"} className="footer-link">Contact Us</Link>
+                    <Link className="footer-link">FAQ</Link>
+                    <Link className="footer-link">Privacy Policy</Link>
+                    <Link className="footer-link">Terms of Service</Link>
                 </div>
 
                 <div className="footer-box">
-                <h2>Get in Touch</h2>
-                <a href="#">support@loanaptech.com</a>
-                <a href="#">+1 (555) 123-456</a>
-                <a href="#">Mon-Fri: 9AM-6PM EST</a>
+                    <h2>Get in Touch</h2>
+                    <Link className="footer-link">support@loanaptech.com</Link>
+                    <Link className="footer-link">+1 (555) 123-456</Link>
+                    <Link className="footer-link">Mon-Fri: 9AM-6PM EST</Link>
                 </div>
             </div>
             <div className="copyright">

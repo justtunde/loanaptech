@@ -7,21 +7,23 @@ import Login from "./components/Login";
 import Apply from "./Pages/Apply";
 import Home from "./Pages/Home";
 import Footer from "./components/Footer";
+import Nav from "./components/Navbar";
 
 
 function App() {
   return(
     <Router>
       <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/apply" element={<Apply />} />
-          <Route path="/home" element={<Home />} />
-        </Routes>
+        <Nav/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/apply" element={<Apply />} />
+            <Route path="/home" element={<Home />} />
+          </Routes>
         <Footer />
       </div>
     </Router>

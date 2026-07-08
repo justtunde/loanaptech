@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+}
+nav {
+    background: aliceblue;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav h1 {
+    color: blue;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.Link {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.6s ease;
+}
+
+.signup-btn {
+    background: blue;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+    height: 40px;
+    width: 90px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Link:hover {
+    background: lightblue;
+    padding: 5px;
+    border-radius: 10px;
+}
