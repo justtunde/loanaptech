@@ -59,7 +59,7 @@ const Dashboard = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch("https://loanaptech-ijz6.onrender.com/api/auth/logout", {
+      await fetch("https://loanaptech-1-f4d2.onrender.com/api/auth/logout", {
         method: "POST",
         credentials: "include"
       });
