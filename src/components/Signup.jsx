@@ -26,7 +26,7 @@ const Signup = () => {
         setError("");
 
         if (!formData.name || !formData.email || !formData.phone || !formData.passowrd || !formData.confirmPassword){
-            setError("please fill in all feilds"):
+            setError("please fill in all feilds")
             return;
         }
 
@@ -40,18 +40,18 @@ const Signup = () => {
         setLoading(true);
 
         try {
-            const response = await fetch("https://loanaptech-ijz6.onrender.com/api/    auth/signup");
+            const response = await fetch("https://loanaptech-1-f4d2.onrender.com/auth/", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 },
-                credentials: "include"
+                credentials: "include",
                 body: JSON.stringify({
                     name: formData.name,
                     email: formData.email,
                     phone: formData.phone,
-                    passowrd: formData.passowrd
-                })    
+                    password: formData.password,
+                }),
             });
 
             const data = await response.json();
@@ -62,7 +62,7 @@ const Signup = () => {
 
             alert("Registration sucessfull! please login.");
             navigate("/login");
-        } catch(err) {
+        } catch (err) {
             setError(err.message);
         } finally {
             setLoading(false);
@@ -75,11 +75,11 @@ function Signup(){
             <div className="container2">
                 <h1>Create your account</h1>
                 <form>
-                    <input type="text" placeholder="Full Name" required/>
-                    <input type="Email"  placeholder="Email address" required/>
-                    <input type="number" placeholder="Phone Number" required/>
-                    <input type="password" placeholder="Password" required/>
-                    <input type="password" placeholder="Confirm Password" required/>
+                    <input type="text" placeholder="Full Name" value={formData.name} onChange={handleChange} required/>
+                    <input type="Email"  placeholder="Email address" value={formData.email} onChange={handleChange}  required/>
+                    <input type="number" placeholder="Phone Number" value={formData.phone} onChange={handleChange}  required/>
+                    <input type="password" placeholder="Password" value={formData.password} onChange={handleChange}  required/>
+                    <input type="password" placeholder="Confirm Password" value={formData.comfirmPassword} onChange={handleChange}  required/>
                     <button type="submit">Sign up</button>
                     <a href="login">Already have an account? <span>Login</span></a>
                 </form>

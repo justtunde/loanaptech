@@ -36,7 +36,7 @@ function Home(){
             <div className="status">
                 <p>Already applied?</p>
                 <Link className="status-link">Check loan status .</Link>
-                <Link to{"/dashboard"} className="status-link">GO to Dashboard</Link>
+                <Link to={"/dashboard"} className="status-link">GO to Dashboard</Link>
             </div>
         </div>
         
