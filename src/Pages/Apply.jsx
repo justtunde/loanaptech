@@ -1,45 +1,146 @@
-import React from "react";
-import "./Apply.css";
+import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Apply.css';  
 
-function Apply(){
-    return(
-        <div className="apply-container">
-            <form>
-                <h1>Apply for Loan</h1>
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="John Doe" required/>
+function Apply() {
+  const navigate = useNavigate();
 
-                <br/>
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    amount: '',
+    tenure: '',
+    purpose: ''
+  });
 
-                <label for="email">Email Address</label>
-                <input type="Email"  id="email" placeholder="johndoe@gmail.com" required/>
+  const handleChange = (e) => {
+    setFormData({ 
+      ...formData, 
+      [e.target.name]: e.target.value 
+    });
+  };
 
-                <br/>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-                <label for="loanamount">Loan Amount</label>
-                <input type="text" placeholder="5000" required/>
+    try {
 
-                <br/>
+      const res = await fetch("https://loanaptech-1-f4d2.onrender.com/api/loans/apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          amount: formData.amount,
+          duration: formData.tenure,
+          purpose: formData.purpose
+        })
+      });
 
-                <label for="tenure">Loan Tenure</label>
-                {/* <input type="text" id="tenure" placeholder="select loan tenure" required/> */}
-                <select name="loan-tenure" id="tenure" required>
-                    <option value="1">1 Month</option>
-                    <option value="2">2 Months</option>
-                    <option value="3">3 Months</option>
-                    <option value="6">6 Months</option>
-                </select>
+      const data = await res.json();
 
-                <br/>
+      if (!res.ok) {
+        alert(data.error || "Failed to apply for loan");
+        return;
+      }
 
-                <label for="purpose">Purpose of Loan</label>
-                <textarea  id="purpose" placeholder="e.g, Home, Buisness expansion, Education...."></textarea>
+      alert(`Application submitted successfully!\nLoan ID: ${data.loan._id}`);
 
-                
+      navigate(`/loan/${data.loan._id}`);
 
-                <button type="submiit">Submit Application</button>
-            </form>
-        </div>
-    );
-}
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong");
+    }
+  };
+
+  return (
+    <div className="apply-container">
+      <div className="apply-card">
+        <h1 className="apply-title">Apply for Loan</h1>
+
+        <form onSubmit={handleSubmit} className="apply-form">
+
+          <div className="input-group">
+            <label htmlFor="name">Full Name</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="John Doe"
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="email">Email Address</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="john@example.com"
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="amount">Loan Amount ($)</label>
+            <input
+              id="amount"
+              type="number"
+              name="amount"
+              min="1000"
+              required
+              value={formData.amount}
+              onChange={handleChange}
+              placeholder="50000"
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="tenure">Loan Tenure</label>
+            <select
+              id="tenure"
+              name="tenure"
+              required
+              value={formData.tenure}
+              onChange={handleChange}
+            >
+              <option value="">Select tenure</option>
+              <option value="12">12 months</option>
+              <option value="24">24 months</option>
+              <option value="36">36 months</option>
+              <option value="60">60 months</option>
+            </select>
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="purpose">Purpose of Loan</label>
+            <textarea
+              id="purpose"
+              name="purpose"
+              rows="5"
+              required
+              value={formData.purpose}
+              onChange={handleChange}
+              placeholder="e.g., Home renovation, Business expansion, Education..."
+            ></textarea>
+          </div>
+
+          <button type="submit" className="apply-submit-btn">
+            Submit Application
+          </button>
+
+        </form>
+      </div> 
+    </div>
+  );
+};
+
 export default Apply;
